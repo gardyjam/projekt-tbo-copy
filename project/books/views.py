@@ -3,8 +3,6 @@ from project import db
 from project.books.models import Book
 from project.books.forms import CreateBook
 
-# WHATEVER WHATEVER
-
 # Blueprint for books
 books = Blueprint('books', __name__, template_folder='templates', url_prefix='/books')
 
