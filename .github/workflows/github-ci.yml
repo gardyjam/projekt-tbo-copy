@@ -3,10 +3,10 @@ name: Test and deploy docker image
 on:
   push:
     branches:
-      - '**'
+      - "**"
   pull_request:
     branches:
-      - '**'
+      - "**"
 
 jobs:
   bandit-scan:
@@ -18,7 +18,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
       - name: Install Bandit
         run: |
@@ -27,7 +27,7 @@ jobs:
 
       - name: Run Bandit security scan
         run: |
-          bandit -r ./src -o bandit-report.json -f json
+          bandit -r ./project -o bandit-report.json -f json
 
       - name: Upload Bandit report
         uses: actions/upload-artifact@v4
@@ -45,7 +45,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
       - name: Install dependencies
         run: |
